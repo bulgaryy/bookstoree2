@@ -1,0 +1,52 @@
+/* Navbar .css*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    padding-bottom: 2px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding-inline: 45px;
+    border-bottom: 1px solid rgb(224, 209, 209);
+    background-color:aliceblue;    
+   
+}
+
+.navbar-left{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand {
+    font-size: 1.8rem;
+    margin-right: 20px;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    flex: 1;
+    background: url('Images/logo.png') center;
+    background-size: 5%;
+    background-repeat: no-repeat;
+}
+
+.navbar-right{
+    display: flex;
+    align-items: center;
+    
+
+}
+
+.navbar-link {
+    color: #000000;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.navbar-link:hover {
+    text-decoration: underline;
+}
