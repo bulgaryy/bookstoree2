@@ -9,6 +9,8 @@ import { bookRouter } from './routes/book.js'
 import { Book } from './models/Book.js'
 import { Student } from './models/Student.js'
 import { Admin } from './models/Admin.js'
+import path from 'path';
+
     
 const app = express()
 app.use(express.json())
@@ -16,12 +18,18 @@ app.use(cors({
     origin: ['http://localhost:5173'],
     credentials: true
 }))
+
+const__dirname = path.resolve();
+
 app.use(cookieParser())
 dotenv.config()
 app.use('/auth', AdminRouter)
 app.use('/student', studentRouter)
 app.use('/book', bookRouter)
-
+app.use(express.static(path.join(__dirname.,'/client/dist')));
+app.get('*',(req,res)=>{
+    res.sendFile(path.join(__dirname,'client','dist','index.html'));
+})
 app.get('/dashboard', async (req, res) => {
     try {
         const student = await Student.countDocuments()
