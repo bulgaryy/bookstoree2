@@ -4,7 +4,7 @@ dotenv.config()
 
 const Connection = async () => {
     mongoose
-  .connect('mongodb://127.0.0.1:27017/bookstore')
+  .connect('mongodb+srv://paulgaryoca:Paulgary1412@mern-estate.gs6hsyz.mongodb.net/mern-estate?retryWrites=true&w=majority&appName=mern-estate')
   
   .then(() => {
     console.log('Connected to MongoDB!');
